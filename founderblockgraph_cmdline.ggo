@@ -16,13 +16,14 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 package		"founderblockgraphs"
-version		"0.1"
-purpose		"Constructs a segment repeat-free founder block graph"
-usage		"founderblockgraph --input=MSA.fasta --output=MSA.index [--gap-limit=GAPLIMIT] [--graphviz-output=…]"
+version		"0.1b"
+purpose		"Constructs a (semi-)repeat-free (elastic) founder block graph"
+usage		"founderblockgraph --input=MSA.fasta --output=MSA.index [--elastic] [--gap-limit=GAPLIMIT] [--graphviz-output=…]"
 description	"Input is MSA given in fasta format. Rows with runs of gaps ‘-’ or N’s ≥ GAPLIMIT will be filtered out"
 
 option	"input"					-	"MSA input path"			string	typestr = "filename"					required
 option	"output"				-	"Index output path"			string	typestr	= "filename"					required
 option	"gap-limit"				-	"Gap limit"					long	typestr = "GAPLIMIT"	default = "1"	optional
+option	"elastic"	e	"Semi-repeat-free segmentation and elastic founder graph as a result"	flag	off
 option	"graphviz-output"		-	"Graphviz output path"		string	typestr = "filename"					optional
 option	"memory-chart-output"	-	"Memory chart output path"	string	typestr = "filename"					optional
